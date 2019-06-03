@@ -9,10 +9,14 @@
     new daum.Postcode({
         oncomplete: function(data) {
             if(data.userSelectedType === 'R'){
+               console.log(data.roadAddress);
                 window.postMessage(data.roadAddress)
+                window.location = "appscheme://callNative";
             }
             if(data.userSelectedType === 'J'){
+                console.log(data.jibunAddress)
                 window.postMessage(data.jibunAddress)
+                window.location = "appscheme://callNative";
             }
         },
         width: '100%',
