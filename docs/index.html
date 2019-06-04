@@ -10,18 +10,11 @@
         oncomplete: function(data) {
             if(data.userSelectedType === 'R'){
                console.log(data.roadAddress);
-                window.postMessage(data.roadAddress)
-                
-                window.location = "appscheme://callNative";
-var message = "Hello"
-window.webkit.messageHandlers.YOURMETHOD.postMessage(message);
+               window.postMessageToiOS(data.roadAddress);
             }
             if(data.userSelectedType === 'J'){
                 console.log(data.jibunAddress)
-                window.postMessage(data.jibunAddress)
-                window.location = "appscheme://callNative";
-var message = "Hello"
-window.webkit.messageHandlers.YOURMETHOD.postMessage(message);
+                window.postMessageToiOS(data.jibunAddress);
             }
         },
         width: '100%',
@@ -29,7 +22,9 @@ window.webkit.messageHandlers.YOURMETHOD.postMessage(message);
         hideMapBtn: true,
     }).embed(document.getElementById('map'));
     
-
+function postMessageToiOS(postData) {
+      window.webkit.messageHandlers.callBackHandler.postMessage(postData);
+  };
 </script>
 
 
