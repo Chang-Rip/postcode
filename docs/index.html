@@ -10,10 +10,12 @@
         oncomplete: function(data) {
             if(data.userSelectedType === 'R'){
                console.log(data.roadAddress);
+               window.zaihan.postMessage(data.roadAddress)
                window.postMessageToiOS(data.roadAddress);
             }
             if(data.userSelectedType === 'J'){
                 console.log(data.jibunAddress)
+                window.zaihan.postMessage(data.jibunAddress)
                 window.postMessageToiOS(data.jibunAddress);
             }
         },
