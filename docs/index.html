@@ -11,14 +11,17 @@
             if(data.userSelectedType === 'R'){
                console.log(data.roadAddress);
                 window.postMessage(data.roadAddress)
+                
                 window.location = "appscheme://callNative";
-                window.location="jscall://callObjectiveCFromJavascript";
+var message = "Hello"
+window.webkit.messageHandlers.YOURMETHOD.postMessage(message);
             }
             if(data.userSelectedType === 'J'){
                 console.log(data.jibunAddress)
                 window.postMessage(data.jibunAddress)
                 window.location = "appscheme://callNative";
-                window.location="jscall://callObjectiveCFromJavascript";
+var message = "Hello"
+window.webkit.messageHandlers.YOURMETHOD.postMessage(message);
             }
         },
         width: '100%',
