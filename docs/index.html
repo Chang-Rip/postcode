@@ -9,13 +9,11 @@
     new daum.Postcode({
         oncomplete: function(data) {
             if(data.userSelectedType === 'R'){
-               console.log(data.roadAddress);
                 window.zaihan.postMessage(data.roadAddress)
                window.postMessageToiOS(data.roadAddress);
             }
             if(data.userSelectedType === 'J'){
-                console.log(data.jibunAddress)
-                 window.zaihan.postMessage(data.jibunAddress)
+                window.zaihan.postMessage(data.jibunAddress)
                 window.postMessageToiOS(data.jibunAddress);
             }
         },
@@ -23,10 +21,9 @@
         height: '100%',
         hideMapBtn: true,
     }).embed(document.getElementById('map'));
-    
-function postMessageToiOS(postData) {
-      window.webkit.messageHandlers.callBackHandler.postMessage(postData);
-  };
+
+    function postMessageToiOS(postData) {
+        window.webkit.messageHandlers.callBackHandler.postMessage(postData);
+    };
+
 </script>
-
-
