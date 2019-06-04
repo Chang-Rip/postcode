@@ -9,12 +9,12 @@
     new daum.Postcode({
         oncomplete: function(data) {
             if(data.userSelectedType === 'R'){
-               console.log(data.roadAddress)
-               window.postMessageToiOS(data.roadAddress)
+               console.log(data.roadAddress);
+               window.postMessageToiOS(data.roadAddress);
             }
             if(data.userSelectedType === 'J'){
                 console.log(data.jibunAddress)
-                window.postMessageToiOS(data.jibunAddress)
+                window.postMessageToiOS(data.jibunAddress);
             }
         },
         width: '100%',
